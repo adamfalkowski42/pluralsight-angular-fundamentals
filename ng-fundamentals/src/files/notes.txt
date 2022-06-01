@@ -1,0 +1,23 @@
+Module - 3 - Video Communicating with Parent Components
+    - Child Component
+        - (click)="handleClickMe()"
+            - function within the child component that emits an event
+            - handleClickMe()
+                this.eventClick.emit(this.event.name);
+            - this.eventClick is an @Output() eventClick property in the child component
+        - Parent component 
+            - Has the child component in its template
+                <event-thumbnail></event-thumbnail>
+            - within this element there is an (eventClick) binding
+            - this handles the event emitted from the child
+            - need to create a function within the parent component to handle this event.
+            - handleEventClick(data)
+                - contains the data emitted by the child component event
+                - in this case it is the this.event.name
+
+Module 3 - Using Template Variables to interact with Child Component
+    - #value - signifies a template Variable
+    - in this example he uses #thumbnail as the template Variable
+        then creates a method witin the child component called logFoo()
+    - using this code: thumbnail.logFoo() you can access this variable as long as it is inside the event-thumbnail element.
+        - <event-thumbnail #thumbnail></event-thumbnail>
